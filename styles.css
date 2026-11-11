@@ -224,3 +224,9 @@ footer {
         padding: 6px;
     }
 }
+/* Fix radio button alignment */
+form input[type="radio"] {
+    width: auto;
+    margin-right: 8px;
+    vertical-align: middle;
+}
