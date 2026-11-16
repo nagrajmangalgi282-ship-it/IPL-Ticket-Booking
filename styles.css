@@ -1,232 +1,253 @@
 
-/* 1. CSS Variables */
-:root {
-    --primary-color: #0b1f3a;
-    --accent-color: #f5c518;
-    --background-color: #f4f6f9;
-    --text-color: #222222;
-}
-
-/* 2. General Styling */
+/* General Styling */
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    scroll-behavior: smooth;
 }
 
 body {
-    margin: 0;
-    padding-top: 110px;
-    font-family: Arial, sans-serif;
-    background-color: var(--background-color);
-    color: var(--text-color);
+    background-color: #f2f4f8;
+    color: #222;
     line-height: 1.6;
 }
 
-/* 3. Navigation Bar */
+/* Navigation Bar */
 header {
-    background-color: var(--primary-color);
+    background: linear-gradient(90deg, #071952, #088395);
     color: white;
-    padding: 10px 25px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
+    padding: 20px 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 header h1 {
-    font-size: 22px;
+    font-size: 26px;
 }
 
-header nav a {
+nav a {
     color: white;
     text-decoration: none;
     margin: 0 12px;
     font-weight: bold;
 }
 
-header nav a:hover {
-    color: var(--accent-color);
+nav a:hover {
+    color: #ffd700;
 }
 
-/* 4. Hero Section */
+/* Main Sections */
+main {
+    max-width: 1200px;
+    margin: auto;
+    padding: 25px;
+}
+
+section {
+    background: white;
+    margin: 25px 0;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+}
+
+section h2 {
+    color: #071952;
+    margin-bottom: 18px;
+    font-size: 26px;
+}
+
+section h3 {
+    color: #088395;
+    margin: 15px 0;
+}
+
+/* Hero Section */
 main > section:first-child {
-    background: linear-gradient(to right, #0b1f3a, #1e4d7b);
+    background: linear-gradient(120deg, #071952, #088395);
     color: white;
     text-align: center;
-    padding: 90px 20px;
+    padding: 65px 25px;
 }
 
 main > section:first-child h2 {
-    font-size: 38px;
-    margin-bottom: 15px;
+    color: white;
+    font-size: 34px;
 }
 
 main > section:first-child p {
-    font-size: 18px;
     margin-bottom: 25px;
 }
 
 main > section:first-child a {
     display: inline-block;
-    background-color: var(--accent-color);
-    color: var(--primary-color);
-    padding: 12px 25px;
+    background: #ffd700;
+    color: #071952;
+    padding: 12px 22px;
     margin: 8px;
-    border-radius: 5px;
+    border-radius: 6px;
     text-decoration: none;
     font-weight: bold;
 }
 
 main > section:first-child a:hover {
-    background-color: white;
+    background: white;
 }
 
-/* 5. Main Sections */
-main > section:not(:first-child) {
-    background-color: white;
-    margin: 30px auto;
-    padding: 30px;
-    width: 90%;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+/* Lists */
+ul {
+    padding-left: 25px;
 }
 
-section h2 {
-    color: var(--primary-color);
-    text-align: center;
-}
-
-/* 6. Tables */
+/* Tables */
 table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
-    background-color: white;
+    background: white;
 }
 
 th {
-    background-color: var(--primary-color);
+    background: #071952;
     color: white;
-    padding: 12px;
 }
 
-td {
+th, td {
+    border: 1px solid #ddd;
     padding: 12px;
     text-align: center;
-    border: 1px solid #dddddd;
 }
 
 tr:nth-child(even) {
-    background-color: #f2f2f2;
+    background: #f2f4f8;
 }
 
-td a {
-    color: var(--primary-color);
+/* Book Buttons */
+.book-btn {
+    background: #e63946;
+    color: white !important;
+    padding: 7px 14px;
+    border-radius: 5px;
+    text-decoration: none;
     font-weight: bold;
 }
 
-/* 7. Forms */
+.book-btn:hover {
+    background: #b71c1c;
+}
+
+/* Form Styling */
 form {
-    max-width: 600px;
-    margin: 20px auto;
+    margin-top: 20px;
 }
 
-form label {
+label {
     display: inline-block;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
     font-weight: bold;
 }
 
-form input,
-form select {
-    width: 100%;
-    padding: 12px;
-    margin-top: 5px;
-    border: 1px solid #cccccc;
+input, select {
+    padding: 10px;
+    border: 1px solid #ccc;
     border-radius: 5px;
+    margin-left: 5px;
 }
 
-form button {
-    background-color: var(--primary-color);
+input:focus, select:focus {
+    outline: 2px solid #088395;
+}
+
+button {
+    background: #071952;
     color: white;
-    padding: 12px 25px;
+    padding: 12px 22px;
     border: none;
-    border-radius: 5px;
+    border-radius: 6px;
     cursor: pointer;
     font-weight: bold;
 }
 
-form button:hover {
-    background-color: #1e4d7b;
+button:hover {
+    background: #088395;
 }
 
-/* 8. Booking Summary Card */
+/* Booking Summary */
 aside {
-    background-color: #f4f6f9;
-    border: 1px solid #dddddd;
-    border-radius: 10px;
+    background: #eaf6f6;
     padding: 20px;
     margin-top: 25px;
+    border-radius: 8px;
+    border-left: 5px solid #088395;
 }
 
-/* 9. Guidelines Cards */
-#guidelines article {
-    background-color: #f4f6f9;
-    padding: 20px;
+/* Guidelines */
+article {
+    background: #f2f4f8;
+    padding: 18px;
     margin: 15px 0;
     border-radius: 8px;
-    border-left: 5px solid var(--accent-color);
 }
 
-#guidelines article h3 {
-    color: var(--primary-color);
-}
-
-/* 10. Footer */
+/* Footer */
 footer {
-    background-color: var(--primary-color);
+    background: #071952;
     color: white;
     text-align: center;
-    padding: 20px;
-    margin-top: 30px;
+    padding: 25px;
 }
 
-/* 11. Responsive Design */
+/* Toast Notification */
+#toast {
+    visibility: hidden;
+    min-width: 250px;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    border-radius: 8px;
+    padding: 16px;
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+}
+
+/* Show Toast */
+#toast.show {
+    visibility: visible;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
     header {
         flex-direction: column;
-        padding: 10px;
+        gap: 15px;
     }
 
-    header nav a {
+    nav a {
         display: inline-block;
         margin: 5px;
     }
 
-    body {
-        padding-top: 140px;
+    main {
+        padding: 10px;
     }
 
-    main > section:not(:first-child) {
-        width: 95%;
-        padding: 15px;
+    section {
+        padding: 18px;
+        overflow-x: auto;
     }
 
     table {
-        font-size: 12px;
+        min-width: 650px;
     }
 
-    th,
-    td {
-        padding: 6px;
+    main > section:first-child h2 {
+        font-size: 26px;
     }
-}
-/* Fix radio button alignment */
-form input[type="radio"] {
-    width: auto;
-    margin-right: 8px;
-    vertical-align: middle;
 }
