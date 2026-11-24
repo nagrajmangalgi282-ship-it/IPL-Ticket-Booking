@@ -18,7 +18,11 @@
     <header>
         <h1>IPL 2026 Ticket Booking</h1>
 
-        <nav>
+        <button type="button" class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation">
+            ☰
+        </button>
+
+        <nav id="navbar">
             <a href="#matches">Matches</a>
             <a href="#booking">Book Ticket</a>
             <a href="#mybookings">My Bookings</a>
@@ -29,7 +33,7 @@
     <main>
 
         <!-- Hero Section -->
-        <section>
+        <section id="hero">
             <h2>Experience The Stadium Energy Live!</h2>
             <p>Feel the excitement of IPL 2026. Support your favourite team!</p>
 
@@ -74,93 +78,143 @@
 
             <h3>Filter Matches by Team</h3>
 
-            <label for="team">Select Team:</label>
+            <div class="match-controls">
 
-            <select id="team">
-                <option value="all">All Teams</option>
-                <option value="RCB">RCB</option>
-                <option value="CSK">CSK</option>
-                <option value="MI">MI</option>
-                <option value="KKR">KKR</option>
-                <option value="SRH">SRH</option>
-                <option value="RR">RR</option>
-                <option value="DC">DC</option>
-                <option value="PBKS">PBKS</option>
-                <option value="GT">GT</option>
-                <option value="LSG">LSG</option>
-            </select>
+                <div>
+                    <label for="team">Select Team:</label>
 
-            <table border="1">
-                <thead>
-                    <tr>
-                        <th>Match Number</th>
-                        <th>Teams</th>
-                        <th>Date & Time</th>
-                        <th>Venue</th>
-                        <th>General (₹)</th>
-                        <th>Premium (₹)</th>
-                        <th>VIP (₹)</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
+                    <select id="team">
+                        <option value="all">All Teams</option>
+                        <option value="RCB">RCB</option>
+                        <option value="CSK">CSK</option>
+                        <option value="MI">MI</option>
+                        <option value="KKR">KKR</option>
+                        <option value="SRH">SRH</option>
+                        <option value="RR">RR</option>
+                        <option value="DC">DC</option>
+                        <option value="PBKS">PBKS</option>
+                        <option value="GT">GT</option>
+                        <option value="LSG">LSG</option>
+                    </select>
+                </div>
 
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>RCB vs CSK</td>
-                        <td>05 April 2026, 7:30 PM</td>
-                        <td>Bengaluru</td>
-                        <td>800</td>
-                        <td>1800</td>
-                        <td>3500</td>
-                        <td><a href="#booking" class="book-btn">Book</a></td>
-                    </tr>
+                <!-- Grid and List View Buttons -->
+                <div class="view-buttons">
+                    <button type="button" id="grid-view">Grid View</button>
+                    <button type="button" id="list-view">List View</button>
+                </div>
 
-                    <tr>
-                        <td>2</td>
-                        <td>MI vs KKR</td>
-                        <td>06 April 2026, 7:30 PM</td>
-                        <td>Mumbai</td>
-                        <td>700</td>
-                        <td>1500</td>
-                        <td>3000</td>
-                        <td><a href="#booking" class="book-btn">Book</a></td>
-                    </tr>
+            </div>
 
-                    <tr>
-                        <td>3</td>
-                        <td>SRH vs RR</td>
-                        <td>07 April 2026, 7:30 PM</td>
-                        <td>Hyderabad</td>
-                        <td>600</td>
-                        <td>1400</td>
-                        <td>2800</td>
-                        <td><a href="#booking" class="book-btn">Book</a></td>
-                    </tr>
+            <!-- Match Cards using CSS Grid -->
+            <div id="match-container" class="match-grid">
 
-                    <tr>
-                        <td>4</td>
-                        <td>DC vs PBKS</td>
-                        <td>08 April 2026, 7:30 PM</td>
-                        <td>Delhi</td>
-                        <td>650</td>
-                        <td>1300</td>
-                        <td>2500</td>
-                        <td><a href="#booking" class="book-btn">Book</a></td>
-                    </tr>
+                <!-- Match 1 -->
+                <article class="match-card" data-teams="RCB CSK">
 
-                    <tr>
-                        <td>5</td>
-                        <td>GT vs LSG</td>
-                        <td>09 April 2026, 7:30 PM</td>
-                        <td>Ahmedabad</td>
-                        <td>750</td>
-                        <td>1600</td>
-                        <td>3200</td>
-                        <td><a href="#booking" class="book-btn">Book</a></td>
-                    </tr>
-                </tbody>
-            </table>
+                    <h3>Match 1</h3>
+
+                    <h2>RCB vs CSK</h2>
+
+                    <p>05 April 2026, 7:30 PM</p>
+
+                    <p>Venue: Bengaluru</p>
+
+                    <p>General: ₹800</p>
+
+                    <p>Premium: ₹1800</p>
+
+                    <p>VIP: ₹3500</p>
+
+                    <a href="#booking" class="book-btn">Book</a>
+
+                </article>
+
+                <!-- Match 2 -->
+                <article class="match-card" data-teams="MI KKR">
+
+                    <h3>Match 2</h3>
+
+                    <h2>MI vs KKR</h2>
+
+                    <p>06 April 2026, 7:30 PM</p>
+
+                    <p>Venue: Mumbai</p>
+
+                    <p>General: ₹700</p>
+
+                    <p>Premium: ₹1500</p>
+
+                    <p>VIP: ₹3000</p>
+
+                    <a href="#booking" class="book-btn">Book</a>
+
+                </article>
+
+                <!-- Match 3 -->
+                <article class="match-card" data-teams="SRH RR">
+
+                    <h3>Match 3</h3>
+
+                    <h2>SRH vs RR</h2>
+
+                    <p>07 April 2026, 7:30 PM</p>
+
+                    <p>Venue: Hyderabad</p>
+
+                    <p>General: ₹600</p>
+
+                    <p>Premium: ₹1400</p>
+
+                    <p>VIP: ₹2800</p>
+
+                    <a href="#booking" class="book-btn">Book</a>
+
+                </article>
+
+                <!-- Match 4 -->
+                <article class="match-card" data-teams="DC PBKS">
+
+                    <h3>Match 4</h3>
+
+                    <h2>DC vs PBKS</h2>
+
+                    <p>08 April 2026, 7:30 PM</p>
+
+                    <p>Venue: Delhi</p>
+
+                    <p>General: ₹650</p>
+
+                    <p>Premium: ₹1300</p>
+
+                    <p>VIP: ₹2500</p>
+
+                    <a href="#booking" class="book-btn">Book</a>
+
+                </article>
+
+                <!-- Match 5 -->
+                <article class="match-card" data-teams="GT LSG">
+
+                    <h3>Match 5</h3>
+
+                    <h2>GT vs LSG</h2>
+
+                    <p>09 April 2026, 7:30 PM</p>
+
+                    <p>Venue: Ahmedabad</p>
+
+                    <p>General: ₹750</p>
+
+                    <p>Premium: ₹1600</p>
+
+                    <p>VIP: ₹3200</p>
+
+                    <a href="#booking" class="book-btn">Book</a>
+
+                </article>
+
+            </div>
 
         </section>
 
@@ -169,7 +223,7 @@
 
             <h2>IPL Ticket Booking Form</h2>
 
-            <form>
+            <form id="booking-form">
 
                 <label for="match">Select Match:</label>
 
@@ -262,6 +316,7 @@
             <h2>My Ticket Bookings</h2>
 
             <table border="1">
+
                 <thead>
                     <tr>
                         <th>Booking ID</th>
@@ -286,29 +341,33 @@
 
             <h2>Ticket Booking Guidelines</h2>
 
-            <article>
-                <h3>1. Ticket Verification</h3>
-                <p>
-                    Carry your valid ticket and booking confirmation.
-                    Tickets will be verified at the stadium entrance.
-                </p>
-            </article>
+            <div class="guidelines-grid">
 
-            <article>
-                <h3>2. ID Proof Requirement</h3>
-                <p>
-                    Carry a valid government-issued photo ID proof
-                    for identity verification at the stadium.
-                </p>
-            </article>
+                <article>
+                    <h3>1. Ticket Verification</h3>
+                    <p>
+                        Carry your valid ticket and booking confirmation.
+                        Tickets will be verified at the stadium entrance.
+                    </p>
+                </article>
 
-            <article>
-                <h3>3. Prohibited Items</h3>
-                <p>
-                    Weapons, fireworks, outside alcohol and other
-                    restricted items are not allowed inside the stadium.
-                </p>
-            </article>
+                <article>
+                    <h3>2. ID Proof Requirement</h3>
+                    <p>
+                        Carry a valid government-issued photo ID proof
+                        for identity verification at the stadium.
+                    </p>
+                </article>
+
+                <article>
+                    <h3>3. Prohibited Items</h3>
+                    <p>
+                        Weapons, fireworks, outside alcohol and other
+                        restricted items are not allowed inside the stadium.
+                    </p>
+                </article>
+
+            </div>
 
         </section>
 
@@ -316,8 +375,11 @@
 
     <!-- Footer Section -->
     <footer>
+
         <p>&copy; 2026 IPL Ticket Booking Website. All Rights Reserved.</p>
+
         <p>Created as an Academic HTML Project.</p>
+
     </footer>
 
     <!-- Toast Notification -->
